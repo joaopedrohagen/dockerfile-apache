@@ -1,0 +1,16 @@
+version: "3.7"
+
+services:
+  apache:
+    image: httpd:alpine
+    container_name: apache
+    ports:
+      - "80:80"
+    volumes:
+      - /home/hagen/Documentos/Workspace/portfolio/HagenDevOps/:/usr/local/apache2/htdocs/
+    networks:
+      - my-network
+
+networks:
+  my-network:
+    driver: bridge
